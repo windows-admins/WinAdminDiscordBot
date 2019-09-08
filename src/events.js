@@ -242,8 +242,8 @@ const handlers = {
       
       
       message: ( event ) => {
-        if(event.user.bot) {
-
+        if(event.author.bot) {
+ 
           console.log( 'Own Message, ignoring' );
           return;
         } 
