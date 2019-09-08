@@ -12,7 +12,7 @@ const camelCase = require( 'lodash.camelcase' );
 const helpers = require('./helpers');
 const points = require('./points');
 const operations = require('./operations');
-const operations = require('./messages');
+const messages = require('./messages');
 /**
  * Handles an attempt by a user to 'self plus' themselves, which includes both logging the attempt
  * and letting the user know it wasn't successful.
