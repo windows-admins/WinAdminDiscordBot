@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-
+const express = require('express')
 const client = new Discord.Client();
 
  
@@ -28,7 +28,7 @@ client.on('message', message => {
 
 client.login(process.env.DISCORD_TOKEN);//BOT_TOKEN is the Client Secret 
 
-const server = express();
-server.listen( process.env.PORT , () => {
+
+express.listen( process.env.PORT , () => {
     console.log( 'Listening on port ' + PORT + '.' );
   });
