@@ -7,12 +7,6 @@
 
 'use strict';
 
-const slack = require( './slack' ),
-      points = require( './points' ),
-      helpers = require( './helpers' ),
-      messages = require( './messages' ),
-      operations = require( './operations' ),
-      leaderboard = require( './leaderboard' );
 
 const camelCase = require( 'lodash.camelcase' );
 
