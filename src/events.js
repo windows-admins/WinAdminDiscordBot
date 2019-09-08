@@ -9,7 +9,7 @@
 
 
 const camelCase = require( 'lodash.camelcase' );
-
+const helpers = require('./helpers')
 /**
  * Handles an attempt by a user to 'self plus' themselves, which includes both logging the attempt
  * and letting the user know it wasn't successful.
@@ -242,7 +242,7 @@ const handlers = {
 
     // Extract the relevant data from the message text.
 
-    const { item, operation } = helpers.extractPlusMinusEventData( event.text );
+    const { item, operation } = helpers.extractPlusMinusEventData(event.content );
 
 
     if (event.text.match(".*quack*.")) {
@@ -251,7 +251,7 @@ const handlers = {
     }
     if (event.text.match("!xy")) {
 
-      event.channel.sendMessage("Solutions start with the problem, not your solution. Check out http://xyproblem.info", event.channel);
+      event.channel.sendMessage("Solutions start with the problem, not your solution. Check out http://xyproblem.info");
     }
     if (event.text.match("!ask")) {
 
@@ -259,17 +259,10 @@ const handlers = {
     }
     if (event.text.match("!thick")) {
 
-      event.channel.sendMessage("Thick imaging sucks, try just using the install.wim.", event.channel);
+      event.channel.sendMessage("Thick imaging sucks, try just using the install.wim.");
     }
 
-    if (event.text.match("!tom")) {
-        if (event.channel == "GC7LSKHLH") {
 
-          event.channel.sendMessage("<@DAPDLTG6T> is stupid", event.channel);
-        }
-
-
-    }
     if ( ! item || ! operation ) {
       return false;
     }
