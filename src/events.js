@@ -87,7 +87,7 @@ const handlePlusRandom = async( item, operation, channel ) => {
  */
 const handleQuack = async(event ) => {
 
-  return event.channel.sendMessage( "Quack, Quack!", channel );
+  return event.channel.sendMessage( "Quack, Quack!" );
 };
 /**
  * Handles a really random against a user, and then notifies the channel of the new score.
@@ -250,7 +250,7 @@ const handlers = {
 
     if (event.content.match(".*quack*.")) {
 
-      handleQuack(event.channel);
+      handleQuack(event);
     }
     if (event.content.match("!xy")) {
 
