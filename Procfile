@@ -1,2 +1,2 @@
 # @see https://devcenter.heroku.com/articles/nodejs-support
-web: node index.js
+worker: node index.js
