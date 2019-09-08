@@ -277,8 +277,10 @@ const handlers = {
     }
 
     // Bail if the user is trying to ++ themselves...
-    console.log('<@' + item + '> is the item, ' + event.member + 'is the member')
-    if ( '<@' + item + '>' === event.member && '+' === operation ) {
+    console.log('<@' + item + '> is the item, ' + event.member + 'is the member');
+    console.log('<@  ' + item + '>' === event.member);
+    console.log('<@  ' + item + '>' == event.member);
+    if ( '<@  ' + item + '>' === event.member && '+' === operation ) {
       handleSelfPlus( event.user, event.channel );
       return false;
     }
