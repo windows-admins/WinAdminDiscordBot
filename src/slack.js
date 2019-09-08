@@ -1,5 +1,5 @@
 /**
- * Handles sending of messages - i.e. outgoing messages - back to discord, via Discord's Web API. See
+ * Handles sending of messages - i.e. outgoing messages - back to Slack, via Slack's Web API. See
  * also ./events.js, which handles incoming messages from subscribed events.
  *
  * TODO: This file should probably be renamed to 'slack.js' so it can handle all other requests to
@@ -10,7 +10,7 @@
 
 'use strict';
 
-let discord, users;
+let slack, users;
 
 /**
  * Injects the Slack client to be used for all outgoing messages.
@@ -21,9 +21,8 @@ let discord, users;
  *                           https://github.com/slackapi/node-slack-sdk/blob/master/src/WebClient.ts
  * @returns {void}
  */
-const setDiscordClient = ( client, token ) => {
-  client.login(token)
-  discord = client;
+const setSlackClient = ( client ) => {
+  slack = client;
 };
 
 /**
@@ -40,14 +39,14 @@ const getUserList = async() => {
   console.log( 'Retrieving user list from Slack.' );
 
   users = {};
-  const userList = await discord.guild.members();
+  const userList = await slack.users.list();
 
   if ( ! userList.ok ) {
     throw Error( 'Error occurred retrieving user list from Slack.' );
   }
 
   for ( const user of userList.members ) {
-    users[ user.Snowflake ] = user;
+    users[ user.id ] = user;
   }
 
   return users;

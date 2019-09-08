@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const express = require('express')
+const events = require('./src/events')
 const client = new Discord.Client();
 
  
@@ -17,11 +18,7 @@ client.on('ready', () => {
 
 client.on('message', message => {
 
-    if (message.content === 'ping') {
-
-       message.reply('pong');
-
-       }
+    events.handlers['message'](message)
 
 });
 
