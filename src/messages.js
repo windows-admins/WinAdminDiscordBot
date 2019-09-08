@@ -145,7 +145,7 @@ const getRandomMessage = (operation, item, score = 0) => {
       break;
 
     case operations.SELF:
-      format = '<@<item>> <message>';
+      format = '<item> <message>';
       break;
 
     case operations.RANDOM:

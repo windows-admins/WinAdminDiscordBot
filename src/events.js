@@ -22,10 +22,10 @@ const messages = require('./messages');
  *                         private channels - aka groups) that the message was sent from.
  * @return {Promise} A Promise to send a Slack message back to the requesting channel.
  */
-const handleSelfPlus = ( user, channel ) => {
+const handleSelfPlus = ( event) => {
   console.log( user + ' tried to alter their own score.' );
-  const message = messages.getRandomMessage( operations.operations.SELF, user );
-  return slack.sendMessage( message, channel );
+  const message = messages.getRandomMessage( operations.operations.SELF, event.member );
+  return event.channel.sendMessage( message );
 };
 
 /**
@@ -85,9 +85,9 @@ const handlePlusRandom = async( item, operation, channel ) => {
  * @return {Promise} A Promise to send a Slack message back to the requesting channel after the
  *                   points have been updated.
  */
-const handleQuack = async(channel ) => {
+const handleQuack = async(event ) => {
 
-  return slack.sendMessage( "Quack, Quack!", channel );
+  return event.channel.sendMessage( "Quack, Quack!", channel );
 };
 /**
  * Handles a really random against a user, and then notifies the channel of the new score.
