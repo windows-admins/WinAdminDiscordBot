@@ -23,8 +23,8 @@ const messages = require('./messages');
  * @return {Promise} A Promise to send a Slack message back to the requesting channel.
  */
 const handleSelfPlus = ( event) => {
-  console.log( user + ' tried to alter their own score.' );
-  const message = messages.getRandomMessage( operations.operations.SELF, event.member );
+  console.log( event.member.id + ' tried to alter their own score.' );
+  const message = messages.getRandomMessage( operations.operations.SELF, event.member.id );
   return event.channel.sendMessage( message );
 };
 
@@ -281,7 +281,7 @@ const handlers = {
     console.log(item === event.member.id);
     console.log(item  == '!'  + event.member);
     if ( item === '!' + event.member.id && '+' === operation ) {
-      handleSelfPlus( event.user, event.channel );
+      handleSelfPlus( event );
       return false;
     }
     // Bail if the user is trying to ## themselves...
