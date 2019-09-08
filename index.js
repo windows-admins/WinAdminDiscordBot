@@ -11,7 +11,7 @@
 
 // Import the discord.js module
 const Discord = require('discord.js');
-const SLACK_OAUTH_ACCESS_TOKEN = process.env.SLACK_BOT_USER_OAUTH_ACCESS_TOKEN;
+const DISCORD_TOKEN = process.env.DISCORD_TOKEN;
 // Create an instance of a Discord client
 const client = new Discord.Client();
 
@@ -33,4 +33,4 @@ client.on('message', message => {
 });
 
 // Log our bot in using the token from https://discordapp.com/developers/applications/me
-client.login(SLACK_OAUTH_ACCESS_TOKEN);
+client.login(DISCORD_TOKEN);
