@@ -53,8 +53,8 @@ const handlePlusMinus = async( item, operation, event) => {
   }
   else
   {
-    console.log( userInit + 'CANNOT UPDATE ' + item );
-    return slack.sendMessage( 'No Soup for <@' + event.member + '>!\nSorry but you exceded your duck limit, check back in 1 hour', channel );
+    console.log( event.member + 'CANNOT UPDATE ' + item );
+    return slack.sendMessage( 'No Soup for ' + event.member + '!\nSorry but you exceded your duck limit, check back in 1 hour', channel );
   }
 };
 
