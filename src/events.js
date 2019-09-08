@@ -242,16 +242,22 @@ const handlers = {
       
       
       message: ( event ) => {
+        if(event.user.bot) {
+
+          console.log( 'Own Message, ignoring' );
+          return;
+        } 
 
     // Extract the relevant data from the message text.
 
     const { item, operation } = helpers.extractPlusMinusEventData(event.content );
 
 
-    if (event.content.match(".*quack*.")) {
+    if (event.content.match(".*[Qq][Uu][Aa][Cc][Kk]*.")) {
 
       handleQuack(event);
     }
+
     if (event.content.match("!xy")) {
 
       event.channel.sendMessage("Solutions start with the problem, not your solution. Check out http://xyproblem.info");
@@ -271,7 +277,7 @@ const handlers = {
     }
 
     // Bail if the user is trying to ++ themselves...
-    if ( item === event.user && '+' === operation ) {
+    if ( '<@' + item + '>' === event.member && '+' === operation ) {
       handleSelfPlus( event.user, event.channel );
       return false;
     }
