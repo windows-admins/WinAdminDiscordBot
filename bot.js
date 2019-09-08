@@ -28,7 +28,7 @@ client.on('message', message => {
 
 client.login(process.env.DISCORD_TOKEN);//BOT_TOKEN is the Client Secret 
 
-const server = options.express || express();
+const server = express();
 server.listen( process.env.PORT , () => {
     console.log( 'Listening on port ' + PORT + '.' );
   });
