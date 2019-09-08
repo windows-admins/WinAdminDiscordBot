@@ -36,17 +36,17 @@ const handleSelfPlus = ( user, channel ) => {
  * @return {Promise} A Promise to send a Slack message back to the requesting channel after the
  *                   points have been updated.
  */
-const handlePlusMinus = async( item, operation, channel, userInit ) => {
-  console.log( userInit + ' triggered a operation on ' + item );
-  const check = await points.checkCanUpdate(userInit);
+const handlePlusMinus = async( item, operation, event) => {
+  console.log( event.member + ' triggered a operation on ' + item );
+  const check = await points.checkCanUpdate(event.member);
   console.log( check);
   if (check)
   {
-    console.log( userInit + ' has enough juice' );
+    console.log( event.member + ' has enough juice' );
    const score = await points.updateScore( item, operation ),
         operationName = operations.getOperationName( operation ),
         message = messages.getRandomMessage( operationName, item, score );
-        return slack.sendMessage( message, channel );
+        return event.channel.sendMessage( message );
   }
   else
   {
@@ -289,7 +289,7 @@ const handlers = {
 
 
     // Otherwise, let's go!
-    return handlePlusMinus( item, operation, event.channel, event.user );
+    return handlePlusMinus( item, operation, event);
 
   }, // Message event.
 
