@@ -1,0 +1,32 @@
+{
+  "name": "Working PlusPlus++",
+  "description": "Like plusplus.chat, but one that actually works, because you can host it yourself 😉",
+  "website": "https://github.com/tdmalone/working-plusplus",
+  "repository": "https://github.com/rowdychildren/working-plusplus",
+  "keywords": [
+    "slack",
+    "karma"
+  ],
+  "env": {
+    "DISCORD_TOKEN": {
+      "description": "Token provided by discord for your bot user when installing the app to your team.",
+      "value": ""
+    },
+    "MAX_OPS": {
+      "description": "Max number of ops per 24 hour period",
+      "value": "20"
+    },
+    "YARN_PRODUCTION": {
+      "description": "This configures Heroku to only install production dependencies. See https://devcenter.heroku.com/articles/nodejs-support#package-installation for more details.",
+      "value": "true"
+    }
+  },
+  "addons": [
+    "heroku-postgresql"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ]
+}
