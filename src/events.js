@@ -245,19 +245,19 @@ const handlers = {
     const { item, operation } = helpers.extractPlusMinusEventData(event.content );
 
 
-    if (event.text.match(".*quack*.")) {
+    if (event.content.match(".*quack*.")) {
 
       handleQuack(event.channel);
     }
-    if (event.text.match("!xy")) {
+    if (event.content.match("!xy")) {
 
       event.channel.sendMessage("Solutions start with the problem, not your solution. Check out http://xyproblem.info");
     }
-    if (event.text.match("!ask")) {
+    if (event.content.match("!ask")) {
 
       event.channel.sendMessage("Don't ask to ask, instead of \"Does anyone use System Center App Controller 2012 R2\" ask \"When ever I try to use xyz feature of System Center App Controller it gives me an error that says abc. I have tried T, S, and U, to fix it. does anyone have any suggestions?\"", event.channel);
     }
-    if (event.text.match("!thick")) {
+    if (event.content.match("!thick")) {
 
       event.channel.sendMessage("Thick imaging sucks, try just using the install.wim.");
     }
