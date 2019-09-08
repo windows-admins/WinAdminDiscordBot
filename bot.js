@@ -17,8 +17,12 @@ client.on('ready', () => {
  
 
 client.on('message', message => {
-
+    if (message.isMentioned(client.user)) {
+        events.handlers['appMention'](message)
+    }
+    else {
     events.handlers['message'](message)
+    }
 
 });
 
