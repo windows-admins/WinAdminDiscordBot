@@ -6,7 +6,7 @@
 
 'use strict';
 
-const slack = require('./slack');
+
 
 const fs = require('fs'),
   crypto = require('crypto'),
