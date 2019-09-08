@@ -248,7 +248,7 @@ const handlers = {
     const { item, operation } = helpers.extractPlusMinusEventData(event.content );
 
 
-    if (event.content.match(".*[Qq][Uu][Aa][Cc][Kk]*.")) {
+    if (event.content.match(".*[Qq]uack*.")) {
 
       handleQuack(event);
     }
