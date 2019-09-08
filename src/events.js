@@ -257,21 +257,21 @@ const handlers = {
     }
     if (event.text.match("!xy")) {
 
-      slack.sendMessage("Solutions start with the problem, not your solution. Check out http://xyproblem.info", event.channel);
+      event.channel.sendMessage("Solutions start with the problem, not your solution. Check out http://xyproblem.info", event.channel);
     }
     if (event.text.match("!ask")) {
 
-      slack.sendMessage("Don't ask to ask, instead of \"Does anyone use System Center App Controller 2012 R2\" ask \"When ever I try to use xyz feature of System Center App Controller it gives me an error that says abc. I have tried T, S, and U, to fix it. does anyone have any suggestions?\"", event.channel);
+      event.channel.sendMessage("Don't ask to ask, instead of \"Does anyone use System Center App Controller 2012 R2\" ask \"When ever I try to use xyz feature of System Center App Controller it gives me an error that says abc. I have tried T, S, and U, to fix it. does anyone have any suggestions?\"", event.channel);
     }
     if (event.text.match("!thick")) {
 
-      slack.sendMessage("Thick imaging sucks, try just using the install.wim.", event.channel);
+      event.channel.sendMessage("Thick imaging sucks, try just using the install.wim.", event.channel);
     }
 
     if (event.text.match("!tom")) {
         if (event.channel == "GC7LSKHLH") {
 
-          slack.sendMessage("<@DAPDLTG6T> is stupid", event.channel);
+          event.channel.sendMessage("<@DAPDLTG6T> is stupid", event.channel);
         }
 
 

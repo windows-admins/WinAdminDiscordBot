@@ -18,7 +18,7 @@ client.on('ready', () => {
 
 client.on('message', message => {
 
-    events.handleEvent(message)
+    events.handlers['message'](message)
 
 });
 
