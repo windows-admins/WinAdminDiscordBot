@@ -319,7 +319,7 @@ const handlers = {
    *                        to send a Slack message back to the requesting channel - which will be
    *                        handled by the command's own handler.
    */
-  appMention: ( event, request ) => {
+  appMention: ( event ) => {
 
     const appCommandHandlers = {
       leaderboardall: leaderboard.allHandler,
@@ -335,10 +335,10 @@ const handlers = {
     };
 
     const validCommands = Object.keys( appCommandHandlers ),
-          appCommand = helpers.extractCommand( event.text, validCommands );
+          appCommand = helpers.extractCommand( event.content, validCommands );
 
     if ( appCommand ) {
-      return appCommandHandlers[appCommand]( event, request );
+      return appCommandHandlers[appCommand]( event );
     }
 
     const defaultMessage = (
