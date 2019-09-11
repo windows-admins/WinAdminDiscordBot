@@ -186,7 +186,7 @@ const sendHelp = ( event ) => {
      
   );
 
-  return slack.sendEphemeral( message);
+  return event.member.createDM( message);
 
 }; // SendHelp.
 
