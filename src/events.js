@@ -75,7 +75,7 @@ const handlePlusRandom = async( item, operation, channel ) => {
         operationName = operations.getOperationName( operation ),
         message = messages.getRandomMessage( operationName, item, score );
 
-  return slack.sendMessage( message, channel );
+  return event.channel.sendMessage( message, channel );
 };
 
 /**
@@ -106,7 +106,7 @@ const handlePlusReallyRandom = async( item, operation, channel ) => {
         operationName = operations.getOperationName( operation ),
         message = messages.getRandomMessage( operationName, item, score );
 
-  return slack.sendMessage( message, channel );
+  return event.channel.sendMessage( message );
 };
 
 /**
@@ -125,7 +125,7 @@ const handlePlusEqual = async( item, operation, channel ) => {
         operationName = operations.getOperationName( operation ),
         message = messages.getRandomMessage( operationName, item, score );
 
-  return slack.sendMessage( message, channel );
+  return event.channel.sendMessage( message );
 };
 
 /**
@@ -152,7 +152,7 @@ const sayThankyou = ( event ) => {
   const randomKey = Math.floor( Math.random() * thankyouMessages.length ),
         message = '<@' + event.user + '> ' + thankyouMessages[ randomKey ];
 
-  return slack.sendMessage( message, event.channel );
+  return event.channel.sendMessage( message);
 
 }; // SayThankyou.
 
@@ -188,7 +188,7 @@ const sendHelp = ( event ) => {
      
   );
 
-  return slack.sendEphemeral( message, event.channel,event.user );
+  return slack.sendEphemeral( message);
 
 }; // SendHelp.
 
@@ -220,7 +220,7 @@ const sendAllHelp = ( event ) => {
      
   );
 
-  return slack.sendMessage( message, event.channel );
+  return event.channel.sendMessage( message );
 
 }; // SendAllHelp.
 const donothing = ( event ) => {
