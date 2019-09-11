@@ -85,7 +85,7 @@ const extractPlusMinusEventData = (text) => {
  * @see ::isUser
  */
 const extractUserID = (text) => {
-  const match = text.match(/![A-Z0-9]{18}/);
+  const match = text.match(/[A-Z0-9]{18}/);
   return match ? match[0] : '';
 };
 
@@ -164,7 +164,7 @@ const isTimeBasedTokenStillValid = (token, ts) => {
  * @see ::extractUserID()
  */
 const isUser = (item) => {
-  return item.match(/![A-Z0-9]{18}/) ? true : false;
+  return item.match(/[A-Z0-9]{18}/) ? true : false;
 };
 
 /**
