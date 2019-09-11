@@ -17,7 +17,7 @@ client.on('ready', () => {
  
 
 client.on('message', message => {
-    console.log(message.text)
+    console.log(message.content)
     if (message.isMentioned(client.user)) {
         events.handlers['appMention'](message)
     }
