@@ -320,8 +320,8 @@ const handlers = {
   appMention: ( event ) => {
 
     const appCommandHandlers = {
-      leaderboardall: leaderboard.allHandler,
-      leaderboard: leaderboard.handler,
+      //leaderboardall: leaderboard.allHandler,
+      //leaderboard: leaderboard.handler,
       helpall: sendAllHelp,
       help: sendHelp,
       thx: sayThankyou,

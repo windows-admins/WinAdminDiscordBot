@@ -28,10 +28,7 @@ messages[ operations.PLUS ] = [
       'Well, well!',
       'Well played.',
       'Sincerest congratulations.',
-      'Delicious.',
-      'SOMEONE GET THIS PATRIOT A COAT',
-      'TOGETHER WE WILL MAKE AMERICA GREAT AGAIN',
-      ':pepe:'
+      'Delicious.'
     ]
   },
   {
@@ -45,15 +42,13 @@ messages[ operations.MINUS ] = [
     probability: 100,
     set: [
       'Oh RLY?',
-      'Oh, really?',
-      'THE WALL JUST GOT 10 FEET HIGHER',
+      'Oh, really?'
       'Oh :slightly_frowning_face:.',
       'I see.',
       'Ouch.',
       'Oh là là.',
       'Oh.',
       'Condolences.',
-      'THE WALL JUST GOT 10 FEET HIGHER',
       ':trumprage:'
     ]
   },
