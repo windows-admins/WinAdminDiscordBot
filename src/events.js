@@ -177,10 +177,10 @@ const sendHelp = ( event ) => {
     '• @Someone--: Subtract points from a user or a thing\n' +
     '• @Someone==: Gets current points from a user or a thing\n' +
     // '• `@Someone##`: Randomly adds or removes 1-5 points from a user or a thing\n' +
-    '• <@621233702235537408> leaderboard: Display the leaderboard for just you\n' +
-    '• <@621233702235537408> leaderboardall ' + shasum.digest('hex') + '`: Display the leaderboard for everyone (you need your secret key)\n' +
-    '• <@621233702235537408> help: Display this message just for you\n\n' +
-    '• <@621233702235537408> helpall: Display this message for everyone\n\n' +
+    '• <@620003435961647164> leaderboard: Display the leaderboard for just you\n' +
+    '• <@620003435961647164> leaderboardall ' + shasum.digest('hex') + '`: Display the leaderboard for everyone (you need your secret key)\n' +
+    '• <@620003435961647164> help: Display this message just for you\n\n' +
+    '• <@620003435961647164> helpall: Display this message for everyone\n\n' +
     'If you\'re a developer, you can teach me new things! :awwww_yeah:\n\n  ' 
     
      
@@ -207,10 +207,10 @@ const sendAllHelp = ( event ) => {
     '• `@Someone--`: Subtract points from a user or a thing\n' +
     '• `@Someone==`: Gets current points from a user or a thing\n' +
     // '• `@Someone##`: Randomly adds or removes 1-5 points from a user or a thing\n' +
-    '• <@621233702235537408> leaderboard: Display the leaderboard for just you\n' +
-    '• <@621233702235537408> leaderboardall {your secret key from help}`: Display the leaderboard for everyone (you need your secret key)\n' +
-    '• <@621233702235537408> help: Display this message just for you\n\n' +
-    '• <@621233702235537408> helpall: Display this message for everyone\n\n' +
+    '• <@620003435961647164> leaderboard: Display the leaderboard for just you\n' +
+    '• <@620003435961647164> leaderboardall {your secret key from help}`: Display the leaderboard for everyone (you need your secret key)\n' +
+    '• <@620003435961647164> help: Display this message just for you\n\n' +
+    '• <@620003435961647164> helpall: Display this message for everyone\n\n' +
     'If you\'re a developer, you can teach me new things! :awwww_yeah:\n\n  ' 
     
      
