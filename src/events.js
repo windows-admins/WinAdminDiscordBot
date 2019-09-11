@@ -41,7 +41,7 @@ const handleSelfPlus = ( event) => {
  *                   points have been updated.
  */
 const handlePlusMinus = async( item, operation, event) => {
-  console.log( event.member + ' triggered a operation on ' + item );
+  console.log( event.member.id + ' triggered a operation on ' + item );
   const check = await points.checkCanUpdate(event.member.id);
   console.log( check);
   if (check)
@@ -279,10 +279,10 @@ const handlers = {
 
     // Bail if the user is trying to ++ themselves...
 
-    console.log('<@' + item + '> is the item, ' + event.member.id + 'is the member');
+    console.log( item.replace("!","") + ' is the item, ' + event.member.id + 'is the member');
     console.log(item === event.member.id);
     console.log(item.replace("!","") ===  '<@' + event.member.id + '>');
-    if ( item.replace("!","") ===  '<@' + event.member.id + '>' && '+' === operation ) {
+    if ( item.replace("!","") ===  event.member.id && '+' === operation ) {
       handleSelfPlus( event );
       return false;
     }
