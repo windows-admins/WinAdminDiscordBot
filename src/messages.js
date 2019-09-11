@@ -141,7 +141,7 @@ const getRandomMessage = (operation, item, score = 0) => {
   switch (operation) {
     case operations.MINUS:
     case operations.PLUS:
-      format = '<message> *<@<item>>* has <score> duck<plural>.';
+      format = '<message> *<item>* has <score> duck<plural>.';
       break;
 
     case operations.SELF:
