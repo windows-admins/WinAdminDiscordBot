@@ -42,7 +42,7 @@ const handleSelfPlus = ( event) => {
  */
 const handlePlusMinus = async( item, operation, event) => {
   console.log( event.member + ' triggered a operation on ' + item );
-  const check = await points.checkCanUpdate(event.member);
+  const check = await points.checkCanUpdate(event.member.id);
   console.log( check);
   if (check)
   {
