@@ -281,8 +281,8 @@ const handlers = {
 
     console.log('<@' + item + '> is the item, ' + event.member.id + 'is the member');
     console.log(item === event.member.id);
-    console.log(item  ==  event.member);
-    if ( item ===  event.member.id && '+' === operation ) {
+    console.log(item.replace("!","") ===  '<@' + event.member.id + '>');
+    if ( item.replace("!","") ===  '<@' + event.member.id + '>' && '+' === operation ) {
       handleSelfPlus( event );
       return false;
     }
