@@ -173,16 +173,14 @@ const sendHelp = ( event ) => {
   shasum.update(event.user + today.getHours() + today.getMinutes() + today.getFullYear() + today.getMonth() + today.getDate());
   const message = (
     'Sure, here\'s what I can do:\n\n' +
-    '• `@Someone++`: Add points to a user or a thing\n' +
-    '• `@Someone--`: Subtract points from a user or a thing\n' +
-    '• `@Someone==`: Gets current points from a user or a thing\n' +
+    '• @Someone++: Add points to a user or a thing\n' +
+    '• @Someone--: Subtract points from a user or a thing\n' +
+    '• @Someone==: Gets current points from a user or a thing\n' +
     // '• `@Someone##`: Randomly adds or removes 1-5 points from a user or a thing\n' +
-    '• `<@621233702235537408> leaderboard`: Display the leaderboard for just you\n' +
-    '• `<@621233702235537408> leaderboardall ' + shasum.digest('hex') + '`: Display the leaderboard for everyone (you need your secret key)\n' +
-    '• `<@621233702235537408> help`: Display this message just for you\n\n' +
-    '• `<@621233702235537408> helpall`: Display this message for everyone\n\n' +
-    'You\'ll need to invite me to a channel before I can recognise ' +
-    '`++` and `--` commands in it.\n\n' +
+    '• <@621233702235537408> leaderboard: Display the leaderboard for just you\n' +
+    '• <@621233702235537408> leaderboardall ' + shasum.digest('hex') + '`: Display the leaderboard for everyone (you need your secret key)\n' +
+    '• <@621233702235537408> help: Display this message just for you\n\n' +
+    '• <@621233702235537408> helpall: Display this message for everyone\n\n' +
     'If you\'re a developer, you can teach me new things! :awwww_yeah:\n\n  ' 
     
      
