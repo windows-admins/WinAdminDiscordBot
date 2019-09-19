@@ -344,7 +344,7 @@ const handlers = {
       'few things I\'ve been trained to do. Send me `help` for more details.'
     );
 
-    return slack.sendEphemeral( defaultMessage, event.channel,event.user );
+    return event.channel.sendMessage( defaultMessage );
 
   } // AppMention event.
 }; // Handlers.
