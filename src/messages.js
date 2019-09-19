@@ -42,7 +42,7 @@ messages[ operations.MINUS ] = [
     probability: 100,
     set: [
       'Oh RLY?',
-      'Oh, really?'
+      'Oh, really?',
       'Oh :slightly_frowning_face:.',
       'I see.',
       'Ouch.',
